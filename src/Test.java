@@ -3,9 +3,13 @@ import javafx.scene.AmbientLight;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Test {
+
+    private static Object Person;
 
     public static void main(String[] args) {
         //Q1
@@ -351,24 +355,400 @@ public class Test {
             System.out.println("Failure");
         }*/
 
+        //Q36
+        //Ans: BCF???? E, ALL class not all "other" class!!!!
+        //Which three statements describe the object-oriented features of the Java language?
+        //A. Objects cannot be reused.
+        //B. A subclass can inherit from a superclass.
+        //C. Objects can share behaviors with other objects.
+        //D. A package must contain more than one class.
+        //E. Object is the root class of all other objects.
+        //F. A main method must be declared in every class.
+
+        //Q37
+        //Ans: 4, 5
+        /*String[] planet = {"Mercury", "Venus", "Earth", "Mars"};
+        System.out.println(planet.length);
+        System.out.println(planet[1].length());*/
+
+        //Q38
+        //Ans: in outer package, only public variable can be access: Only s is accessible by obj
+        /*class Acc{
+               int p;
+               private int q;
+               protected int r;
+               public int s;
+        }*/
+
+
+        //Q39
+        // Ans : DerivedB DerivedB, child cast to parent, no change, still child
+        /*Base b1 = new DerivedB();
+        Base b2 = new DerivedA();
+        Base b3 = new DerivedB();
+        b1 = (Base) b3;
+        Base b4 = (DerivedA) b3;
+        b1.test();
+        b4.test();*/
+
+        //Q40
+        // 3 + 4 means string, but (3+4) means int
+        //System.out.println("5 + 2 = " + 3 + 4);
+        //System.out.println("5 + 2 = " + (3 + 4));
+
+        //Q41
+        //checkAge(iList, p-> p.getAge()>40); lambda express!!!!
+
+        //Q42
+        //print first,then break!!!
+        /*String[][] arr = {{"A","B","C"},{"D","E"}};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + " ");
+                if (arr[i][j].equals("B")) {
+                    break;
+                }
+            }
+            continue;
+        }*/
+
+        //Q43
+        // false and false, trim() does change any thing, it has some return value, if not, then original doesn't
+        // change...
+        /*String str = " ";
+        str.trim();
+        System.out.println(str.equals("") + " and " + str.isEmpty());*/
+
+        //Q44
+        // needs to ignore case
+        /*String str1 = "Java";
+        String str2 = new String("java");
+        if (str1.equalsIgnoreCase(str2)) {
+            System.out.println("Equal");
+        } else {
+            System.out.println("Not equal");
+        }*/
+
+        //Q45
+        //default int double!!!!
+        /*doSum(10, 20);
+        doSum(10.0,20.0);*/
+
+        //Q46
+        //concat method parameter needs to be NotNull!!!!
+        /*String[] strs = new String[2];
+        int idx = 0;
+        for (String s : strs) {
+            strs[idx].concat(" element " + idx);
+            idx++;
+        }
+        for (idx = 0; idx < strs.length; idx++) {
+            System.out.println(strs[idx]);
+        }*/
+
+        //Q47
+        // StringBuilder/StringBuffer has internal toString method, customized doesn't, nees to rewrite
+        //System.out.println("Hello " + new StringBuilder("Java SE 8"));
+        //System.out.println("Hello " + new MyString("Java SE 8"));
+
+        //Q48
+        // int < float < double, so double cover float cover int!!!! small into big ok, big into small no!!!!
+        /*int iVar = 100;
+        double dVar = 100.0;
+        float fVar = 100f;
+        iVar = dVar;
+        iVar = fVar;
+        fVar = dVar;
+
+        dVar = iVar;
+        fVar = iVar;
+        dVar = fVar;*/
+
+        //Q49
+        // command:
+        // javac MainTest.java
+        // java MainTest 1 2 3
+        // Ans: String 1
+        // 1. Can have multiple main method in one class, depends on args pass in.
+        // 2. default is String!!!
+        /*public static void main(String[] args) {
+            System.out.println("String " + args[0]);
+        }
+
+        public static void main(int[] args) {
+            System.out.println("int " + args[0]);
+        }
+
+        public static void main(Object[] args) {
+            System.out.println("Object " + args[0]);
+        }*/
+
+        //Q50
+        /*int[][] num = new int[1][3];
+        for (int i = 0; i < num.length; i++) {
+            for (int j = 0; j < num[i].length; j++) {
+                num[i][j] = 10;
+            }
+        }
+        for (int i = 0; i < num.length; i++) {
+            for (int j = 0; j < num[i].length; j++) {
+                System.out.println("num[" + i + "]" + "[" + j + "] = " + num[i][j]);
+            }
+        }*/
+
+        //Q52
+        // only primitive type can be access without rewrite method.
+        // Arrays.toString, can convert array to string, then rewrite to string method
+        /*class Planet {
+            public String name;
+            public int moons;
+
+            public Planet(String name, int moons) {
+                this.name = name;
+                this.moons = moons;
+            }
+        }
+
+        Planet[] planets = {
+                new Planet("Mercury",0),
+                new Planet("Venus",0),
+                new Planet("Earth",1),
+                new Planet("Mars",2)};
+
+        System.out.println(planets);
+        System.out.println(planets[2]);
+        System.out.println(planets[2].moons);*/
+
+        //Q53,
+        // 15, 30, 75, 60, 90 you are correct!!!
+        /*int[] intArr = {15, 30, 45, 60, 75};
+        intArr[2] = intArr[4];
+        intArr[4] = 90;
+        System.out.println(Arrays.toString(intArr));*/
+
+        //Q54
+        // two way to write interation. one is use i : intArr, the other is i = 0 to intArr[i]
+        /*int[] intArr = {8, 16, 32, 64, 128};
+        for (int i : intArr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < intArr.length; i++) {
+            System.out.print(intArr[i] + " ");
+        }*/
+
+        //Q55
+        // Ans:
+        // 1 can be implemented by using enhanced for loop
+        // 3 can NOT be implemented by either the enhanced for loop or standard for loop
+        //int[] array = {1, 2, 3, 4, 5};
+        //And given the requirements:
+        //1. Process all the elements of the array in the order of entry.
+        //2. Process all the elements of the array in the reverse order of entry.
+        //3. Process alternating elements of the array in the order of entry.
+
+        //Q56
+        // 400 200, this static is only for method, not for results, so var don't change, and results is 400 and var
+        // is 200
+        /*int var = 200;
+        System.out.println(doCal(var));
+        System.out.println(var);*/
+
+        //Q57
+        // Small type can NOT contain big type. Interface can be a type.
+        //Given the following class declarations:
+        //public abstract class Animal{}
+        //public interface Hunter
+        //public class Cat extends Animal implements Hunter
+        //public class Tiger extends Cat
+        //This would fail:
+        // ArrayList<Tiger> myList = new ArrayList<>();
+        // myList.add(new Cat());
+
+        //Q58
+        //java bytecode: it can run on any platform as long as this platform has a java compiler, NO NEED JRE.
+        // Then run on JVM or its implementation.
+
+        //Q59
+        //key! null is NOT an instance in java, so anyting Object obj1 = null, there is NO object created!!!
+        /*Object obj1 = new Object();
+        Object obj2 = null;
+        System.out.println(obj1);
+        System.out.println(obj2);*/
+        /*class MarkList{
+            int num;
+
+            public void graceMark(MarkList obj4) {
+                obj4.num += 10;
+            }
+        }
+        MarkList obj1 = new MarkList();
+        MarkList obj2 = obj1;
+        MarkList obj3 = null;
+        obj2.num = 60;
+        System.out.println(obj1);
+        System.out.println(obj2);
+        System.out.println(obj1.num);
+        System.out.println(obj2.num);*/
+
+        //Q61
+        // byte short integer is ok to use 1, String, Long, Double needs : "1", 1l, 1d and so on
+        /*Byte x1 = 1;
+        short x2 = 1;
+        Integer x3 = new Integer(1);
+        String x4 = "1";
+        Long x5 = 1l;
+        Double x6 = 1d;
+
+        switch (x1) {
+            case 1:
+                System.out.println("One");
+                break;
+            case 2:
+                System.out.println("Two");
+                break;
+        }*/
+
+        //Q62
+        // A boolean can NOT be null but Boolean can be null!!!! small boolean no, big Boolean yes. and Boolean is
+        // null mean the value is false;
+        /*Boolean[] bool = new Boolean[2];
+        bool[0] = new Boolean(Boolean.parseBoolean("true"));
+        bool[1] = new Boolean(null);
+
+        System.out.println(bool[0] + " " + bool[1]);*/
+
+        //Q63
+        // B. B small is in big but big is not small
+
+        //Q64
+        // need to see all options,
+        /*String str = "9001";
+        int num = Integer.parseInt(str);
+        System.out.println(num);*/
+        //only naming, no meaning!!!! still in the method!!
+        /*class App {
+            String myStr = "7007";
+
+            public void doStuff(String str) {
+                int myNum = 0;
+                try {
+                    String myStr = str;
+                    myNum = Integer.parseInt(myStr);
+                } catch (NumberFormatException ne) {
+                    System.err.println("Error");
+                }
+                System.out.println("myStr: " + myStr + " myNum " + myNum);
+            }
+        }
+
+        App obj = new App();
+        obj.doStuff("9009");*/
+
+        //Q65 : Efficient / flexible
+        //Which two are benefits of polymorphism?
+        //B. More efficient code at runtime
+        //D. More flexible and reusable code
+
+        //Q66
+        //overlap to the new ones
+        /*int[] nums1 = new int[1];
+        int[] nums2 = {1, 2, 3, 4, 5};
+        System.out.println(nums1);
+        System.out.println(nums2);
+        nums1 = nums2;
+        System.out.println(nums1);
+        System.out.println(nums2);
+        for (int i : nums1) {
+            System.out.print(i + " : ");
+        }*/
+
+        //Q67
+        // == ONLY IF two variable refer to same object, then true. equals() as long as value same, true;
+
+        //Q68
+        //employee can't budget, manager can't option hahhah small can't go to big, big can go to small
+
+        //Q69
+        //Read carefully, psvm, string[] args
+
+        //Q70
+        int[][] n = {{1, 3}, {2, 4}};
+        for (int i = n.length - 1; i >= 0; i--) {
+            for (int j : n[i]) {
+                System.out.print(j);
+            }
+        }
+
+
     }
 
 
-    //Q15
-    /*void readCard(int cardNo) throws Exception{
-        System.out.println("Reading Cards");
-    }
-    void checkCard(int cardNo)  throws RuntimeException{
-        System.out.println("Checking Cards");
+
+    /*static int doCal(int var) {
+        var = var * 2;
+        return var;
     }*/
 
-    //Q16
-    /*public static boolean isAvailable(int x) {
-        return x-- > 0 ? true : false;
-    }*/
-    }
 
-    //Q23
+    //Q45
+    /*public static void doSum(Integer x, Integer y) {
+        System.out.println("Integer sum is " + (x + y));
+    }
+    public static void doSum(int x, int  y) {
+        System.out.println("int sum is " + (x + y));
+    }
+    public static void doSum(double x, double y) {
+        System.out.println("double sum is " + (x + y));
+    }
+    public static void doSum(float x, float y) {
+        System.out.println("float sum is " + (x + y));
+    }*/
+}
+        //Q47
+        /*class MyString{
+            String msg;
+
+            MyString(String msg) {
+                this.msg = msg;
+            }
+
+        }*/
+        //Q15
+            /*void readCard(int cardNo) throws Exception{
+                System.out.println("Reading Cards");
+            }
+            void checkCard(int cardNo)  throws RuntimeException{
+                System.out.println("Checking Cards");
+            }*/
+
+        //Q16
+            /*public static boolean isAvailable(int x) {
+                return x-- > 0 ? true : false;
+            }*/
+
+        //Q39
+        /*class Base {
+            public void test() {
+                System.out.println("Base ");
+            }
+        }
+
+        class DerivedA extends Base {
+            public void test() {
+                System.out.println("DerivedA");
+            }
+        }
+
+        class DerivedB extends DerivedA {
+            public void test() {
+                System.out.println("DerivedB");
+            }
+        }*/
+
+
+
+//Q23
     /*class A {
         public void a() {
             System.out.println("A ");
