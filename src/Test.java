@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -900,6 +901,7 @@ public class Test {
         System.out.println(points);*/
 
         //Q88
+        //Ans: [0, 0, 30, 40]
         //anytime use new keyword, a new piece of memory has be allocated for the instance, so that is actually to different thing.
         /*int[] nums;
         nums = new int[2];
@@ -1064,9 +1066,138 @@ public class Test {
         colors.add(3, "cyan");
         System.out.println(colors);*/
 
+        //Q106
+        //Ans: B. 3 5. only initiated, no calling method. so 3 5....
+        /*int x = 3, y = 5;
+        Test obj = new Test(x, y);
+        System.out.println(x + " "+ y);*/
 
+        //Q107
+        //Ans: B 10 Hello Hello 11
+        /*Test item = new Test();
+        item.a1 = 11;
+        StringBuilder sb = new StringBuilder("Hello");
+        Integer i = 10;
+        doProudct(i);
+        doString(sb);
+        doProudct(item.a1);
+        System.out.println(i + " " + sb + " " + item.a1);*/
 
+        //Q108
+        //Ans: A compliation failed. lambda expression. no such use
+        /*String[] arr = {"hi", "how", "are", "you"};
+        List<String> arrList = new ArrayList<>(Arrays.asList(arr));
+        if (arrList.removeIf((String s) -> (return; s.length < =2;))) {
+            System.out.println(s + " removed");
+        }*/
+
+        //Q109
+        //Ans: final vairable must be initilized, final can NOT use with abstract, final means no extendable,
+        //     abstract means needs to extend!!!!
+        //       D.class A4{
+        //            protected static final int i;
+        //            private void doStuff(){}
+        //        }
+        //      E. final abstract class A5{
+        //              protected static int i
+        //              void doStuff(){}
+        //              abstract void doIt();
+        //          }
+
+        /*final class A1 {
+            public A1() {}
+        }*/
+
+        //Q110
+        //Ans: A NullPointerException is thrown at runtime;
+        //code is ok, but class Studnet doesn't have default constructor, hence no students[0] is generated, cause
+        // NullPointerException.
+        // Add Student[0] = new Student(null) --> A. null Richar Don. means already initilized.
+        /*class Student {
+
+            String name;
+
+            public Student(String name) {
+                this.name = name;
+            }
+        }
+
+        Student[] students = new Student[3];
+        students[1] = new Student("Richar");
+        students[2] = new Student("Don");
+        for (Student s : students) {
+            System.out.println(" " + s.name);
+        }*/
+
+        //Q111
+        //Ans: D. grid[2][0] = 'X' makes three consecutive X in grid. C? grid[0][2] not sure......
+
+        //Q112
+        //Ans: C. Welcome Log : 2 1. check ++x and x++, compare first x++, cal first ++x. finally all caled.
+        /*int x = 1;
+        int y = 0;
+        if (x++ > ++y) {
+            System.out.println("Hello");
+        } else {
+            System.out.println("Welcome");
+        }
+        System.out.println("Log : " + x + " " + y );*/
+
+        //Q113
+        //Ans: A. java MyFile 1 3 2 2. needs "Arg is 2", so ar3 value should be 2, the 4th one equals 2.
+        //Remeber!!! default pass in args is String!!!!!!!!!
+        /*String ar1 = args[1];
+        String ar2 = args[2];
+        String ar3 = args[3];
+        System.out.println("Arg is " + ar3);*/
+
+        //Q114
+        //Ans: B. 1 2 3. Carefully count. arr.length = 4, 4-1 = 3, i < 3 so i can only be 0 , 1, 2 which convert to
+        // index is arr[0], arr[1], arr[2]. ans is 1 2 3
+        /*int[] arr = {1, 2, 3, 4};
+        int i = 0;
+        do{
+            System.out.println(arr[i] + " ");
+            i++;
+        } while (i < arr.length - 1);*/
+
+        //Q115
+        //Ans: B. false, true. read the code....that's it.
+        /*Test ts = new Test();
+        System.out.print(isAvailable + " ");
+        ts.isAvailable = doStuff();
+        System.out.print(isAvailable);*/
     }
+
+    //Q115
+    /*public static boolean doStuff() {
+        return !isAvailable;
+    }
+
+    static boolean isAvailable = false;*/
+
+    //Q107
+    /*int a1;
+
+    public static void doProudct(int a) {
+        a = a * a;
+    }
+
+    public static void doString(StringBuilder sb) {
+        sb.append(" " + sb);
+    }*/
+
+    //Q106
+    /*int x, y;
+
+    public Test(int x, int y) {
+        init(x, y);
+    }
+
+    public void init(int x, int y) {
+        this.x = x * x;
+        this.y = y * y;
+    }*/
 
     //Q100
     //Ans: D. compilation failed, again, interface and normal class can NOT polymorphism, has to be casted!!!
@@ -1219,5 +1350,11 @@ public class Test {
         return name + ":" + contract + ":" + salary;
     }*/
 
+// Q109
+//final variable must be initilizaed!!!!!
+/*class A4{
+    protected static final int i;
+    private void doStuff(){}
+}*/
 
 
