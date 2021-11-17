@@ -1,6 +1,7 @@
 import javafx.scene.AmbientLight;
 import org.omg.CORBA.CODESET_INCOMPATIBLE;
 
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -15,7 +16,7 @@ public class Test {
     private static Object Person;
 
     public static void main(String[] args) {
-        //Q1
+        //QA1
         // 10 hello world
         // ++a means calculate first, then compare, a++ means compare first, then calculate
         /*int aVar = 9;
@@ -25,13 +26,13 @@ public class Test {
             System.out.println(aVar + "hello universe");
         }*/
 
-        //Q2
+        //QA2
         //An exception is thrown at runtime
         // exception throws at runtime
         /*String date = LocalDate.parse("2014-05-04").format(DateTimeFormatter.ISO_DATE_TIME);
         System.out.println(date);*/
 
-        //Q3
+        //QA3
         //Compilation fails at line n2(String s4 = (String) (s3 * s2);)
         //can not cast long to string, use String.valueOf(s4)
         /*Short s1 =200;
@@ -40,7 +41,7 @@ public class Test {
         String s4 = (String) (s3 * s2);
         System.out.println("sum is " + s4);*/
 
-        //Q4
+        //QA4
         //What is the name of the Java concept that uses access modifiers to protect variables and hide them within
         //a class?
         //   Encapsulation
@@ -50,7 +51,7 @@ public class Test {
         //D. Instantiation
         //E. Polymorphism
 
-        //Q5
+        //QA5
         //make the method at line n3 public/protected
         /*abstract class Planet {
             protected void revole() {}
@@ -61,7 +62,7 @@ public class Test {
             protected void rotate(){}
         }*/
 
-        //Q6
+        //QA6
         //compile failed only at line n1 == at car(String trans){}
         /*class Vechicle {
             String type = "4w";
@@ -86,7 +87,7 @@ public class Test {
             }
         }*/
 
-        //Q7
+        //QA7
         //Match 2
         //needs toString to make it same
         /*StringBuilder sb = new StringBuilder(5);
@@ -99,7 +100,7 @@ public class Test {
             System.out.println("No Match");
         }*/
 
-        //Q8
+        //QA8
         //A B C C
         /*String ta = "A ";
         ta = ta.concat("B ");
@@ -109,7 +110,7 @@ public class Test {
         ta = ta.concat(tb);
         System.out.println(ta);*/
 
-        //Q9
+        //QA9
         // super(r)
         // this.c = c
         /*class CD {
@@ -130,7 +131,7 @@ public class Test {
             }
         }*/
 
-        //Q10
+        //QA10
         //for(int e = 0; e < 5; e += 2)
         // print 1,3,5. starting from 0
         /*int a[] = {1, 2, 3, 4, 5};
@@ -138,7 +139,7 @@ public class Test {
             System.out.println(a[e]);
         }*/
 
-        //Q11
+        //QA11
         // key words: ONLY Certain fiels and method are accessible from other objects
         //Which statement best describes encapsulation?
         //A. Encapsulation ensures that classes can be designed so that only certain fields and methods of an
@@ -149,17 +150,17 @@ public class Test {
         //D. Encapsulation ensures that classes can be designed so that if a method has an argument MyType x,
         //any subclass of MyType can be passed to that method.
 
-        //Q12
+        //QA12
         //SalesMan.java product.java
         //import sales.*;
         //import sales.product.*;
 
-        //Q13
+        //QA13
         //D. acct.changeAmount(0)
         //G. acct.changeAmount(-acct.Amount)
         //H. acct.changeAmount(-acct.getAmount)
 
-        //Q14
+        //QA14
         //It is ok to put index++ out of for loop, as long as it is in the format index++ or idx++
         //start with 0, end with < 2
         //for (int index = 0; index < 2;) {
@@ -182,14 +183,14 @@ public class Test {
             index++;
         }*/
 
-        //Q15
+        //QA15
         //Compliation failed only at line n3 (ex.readCard(cardNo); add exception to method signature.
         /*Test ex = new Test();
         int cardNo = 12344;
         ex.checkCard(cardNo);
         ex.readCard(cardNo);*/
 
-        //Q16
+        //QA16
         //Can't use --x, otherwise will be 4321, not 54321
         /*int x = 5;
         while (isAvailable(x)) {
@@ -197,7 +198,7 @@ public class Test {
             x--;
         }*/
 
-        //Q17
+        //QA17
         //you can !!!!!!!!!!!NOT!!!!!!!!!!! use boolean on switch statement!!!!!!!!!!!!
         //Replace line 5 With String opt = "true";
         //Replace line 7 with case "true":
@@ -211,14 +212,14 @@ public class Test {
         }
         System.out.print("Done");*/
 
-        //Q18
+        //QA18
         // Ans: 5, only loop once, num == 0 always false
         /*int num = 5;
         do {
             System.out.println(num-- + " ");
         } while (num == 0);*/
 
-        //Q19
+        //QA19
         // E: Compliation Failed. () ? : tri-factor
         /*int x = 100;
         int a = x++;
@@ -227,7 +228,7 @@ public class Test {
         int d = (a < b) ? (a <c )? a : (b < c) ? b : c;
         System.out.println(d);*/
 
-        //Q20
+        //QA20
         // finally it is a 2x2 matrix, chs length is 2, no more than 2 elementary.
         /*String[][] chs = new String[2][];
         chs[0] = new String[2];
@@ -248,7 +249,7 @@ public class Test {
             System.out.println();
         }*/
 
-        //Q21
+        //QA21
         //Ans CA: OK to initiate at constructor level
         /*Emp e = new Emp();
         e.salary = 100;
@@ -256,7 +257,7 @@ public class Test {
         e.contract = true;
         System.out.println(e);*/
 
-        //Q22
+        //QA22
         //remove return true
         /*List<String> names = new ArrayList<>();
         names.add("Robb");
@@ -268,19 +269,19 @@ public class Test {
         }
         System.out.println(names);*/
 
-        //Q23
+        //QA23
         // Compliation error, needs to add return type like void or something,
         // Compilation fails at line n1 and line n2
         //C c = new C();
 
-        //Q25
+        //QA25
         // Ans: int[] array = new int[2]
         /*int[] array = new int[2];
         array[0] = 10;
         array[1] = 20;
         System.out.println(array[0] + " : " + array[1]);*/
 
-        //Q26
+        //QA26
         //a work done!
         /*String[] arr = {"a", "b", "c", "d", "e"};
         for (int i = 0; i < arr.length; i++) {
@@ -292,7 +293,7 @@ public class Test {
             break;
         }*/
 
-        //Q27
+        //QA27
         //Ans ACE: key words: handlding separated, choose where to handle, tailerod to particular
         //Which three are advantages of the Java exception mechanism?
         // A. Improves the program structure because the error handling code is separated from the normal program
@@ -302,12 +303,12 @@ public class Test {
         //D. Improves the program structure because exceptions must be handled in the method in which they occurred
         //E. Allows the creation of new exceptions that are tailored to the particular program being created
 
-        //Q28
+        //QA28
         // Ans: javac to .java file!!!!!
         // javac Greeting.java
         // java Greeting Duke
 
-        //Q30
+        //QA30
         // Ans: 0 2 4, just read the code!!!!
         /*int ii = 0;
         int jj = 7;
@@ -315,7 +316,7 @@ public class Test {
             System.out.println(ii + " ");
         }*/
 
-        //Q31
+        //QA31
         // parse needs to pass in !!!, ISO_DATE is ok!
         /*LocalDate date1 = LocalDate.now();
         LocalDate date2 = LocalDate.of(2014, 6, 20);
@@ -324,7 +325,7 @@ public class Test {
         System.out.println("date2 = " + date2);
         System.out.println("date3 = " + date3);*/
 
-        //Q32
+        //QA32
         // only str1 = str2 can make == true, if new, then still false, NO toString, No "Duke"!!!!!
         /*StringBuilder sb1 = new StringBuilder("Duke");
         String str1 = sb1.toString();
@@ -332,11 +333,11 @@ public class Test {
         //String str2 = str1; // only str1 = str2 can make == true, if new, then still false
         System.out.println(str1 == str2);*/
 
-        //Q33
+        //QA33
         // Ans: A. 10, 10
         // All make 10, as long as static varable, should be same, and finally is the last number;
 
-        //Q34
+        //QA34
         //tri don't miss any conditons!!!, if if ok, but tri needs to consider!!!
         /*double discount = 0;
         int qty = Integer.parseInt(args[0]);
@@ -350,7 +351,7 @@ public class Test {
 
         discount = qty >= 90 ? 0.5 : qty > 80 ? 0.2 : 0;*/
 
-        //Q35
+        //QA35
         // it is javac .java and pass in "Hello", so condition is false, then go to print Failure, all is correct,
         // needs to go to the corret place.
         /*if (args[0].equals("Hello") ? false : true) {
@@ -359,7 +360,7 @@ public class Test {
             System.out.println("Failure");
         }*/
 
-        //Q36
+        //QA36
         //Ans: BCF???? E, ALL class not all "other" class!!!!
         //Which three statements describe the object-oriented features of the Java language?
         //A. Objects cannot be reused.
@@ -369,13 +370,13 @@ public class Test {
         //E. Object is the root class of all other objects.
         //F. A main method must be declared in every class.
 
-        //Q37
+        //QA37
         //Ans: 4, 5
         /*String[] planet = {"Mercury", "Venus", "Earth", "Mars"};
         System.out.println(planet.length);
         System.out.println(planet[1].length());*/
 
-        //Q38
+        //QA38
         //Ans: in outer package, only public variable can be access: Only s is accessible by obj
         /*class Acc{
                int p;
@@ -385,7 +386,7 @@ public class Test {
         }*/
 
 
-        //Q39
+        //QA39
         // Ans : DerivedB DerivedB, child cast to parent, no change, still child
         /*Base b1 = new DerivedB();
         Base b2 = new DerivedA();
@@ -395,15 +396,15 @@ public class Test {
         b1.test();
         b4.test();*/
 
-        //Q40
+        //QA40
         // 3 + 4 means string, but (3+4) means int
         //System.out.println("5 + 2 = " + 3 + 4);
         //System.out.println("5 + 2 = " + (3 + 4));
 
-        //Q41
+        //QA41
         //checkAge(iList, p-> p.getAge()>40); lambda express!!!!
 
-        //Q42
+        //QA42
         //print first,then break!!!
         /*String[][] arr = {{"A","B","C"},{"D","E"}};
         for (int i = 0; i < arr.length; i++) {
@@ -416,14 +417,14 @@ public class Test {
             continue;
         }*/
 
-        //Q43
+        //QA43
         // false and false, trim() does change any thing, it has some return value, if not, then original doesn't
         // change...
         /*String str = " ";
         str.trim();
         System.out.println(str.equals("") + " and " + str.isEmpty());*/
 
-        //Q44
+        //QA44
         // needs to ignore case
         /*String str1 = "Java";
         String str2 = new String("java");
@@ -433,12 +434,12 @@ public class Test {
             System.out.println("Not equal");
         }*/
 
-        //Q45
+        //QA45
         //default int double!!!!
         /*doSum(10, 20);
         doSum(10.0,20.0);*/
 
-        //Q46
+        //QA46
         //concat method parameter needs to be NotNull!!!!
         /*String[] strs = new String[2];
         int idx = 0;
@@ -450,12 +451,12 @@ public class Test {
             System.out.println(strs[idx]);
         }*/
 
-        //Q47
+        //QA47
         // StringBuilder/StringBuffer has internal toString method, customized doesn't, nees to rewrite
         //System.out.println("Hello " + new StringBuilder("Java SE 8"));
         //System.out.println("Hello " + new MyString("Java SE 8"));
 
-        //Q48
+        //QA48
         // int < float < double, so double cover float cover int!!!! small into big ok, big into small no!!!!
         /*int iVar = 100;
         double dVar = 100.0;
@@ -468,7 +469,7 @@ public class Test {
         fVar = iVar;
         dVar = fVar;*/
 
-        //Q49
+        //QA49
         // command:
         // javac MainTest.java
         // java MainTest 1 2 3
@@ -487,7 +488,7 @@ public class Test {
             System.out.println("Object " + args[0]);
         }*/
 
-        //Q50
+        //QA50
         /*int[][] num = new int[1][3];
         for (int i = 0; i < num.length; i++) {
             for (int j = 0; j < num[i].length; j++) {
@@ -500,7 +501,7 @@ public class Test {
             }
         }*/
 
-        //Q52
+        //QA52
         // only primitive type can be access without rewrite method.
         // Arrays.toString, can convert array to string, then rewrite to string method
         /*class Planet {
@@ -523,14 +524,14 @@ public class Test {
         System.out.println(planets[2]);
         System.out.println(planets[2].moons);*/
 
-        //Q53,
+        //QA53,
         // 15, 30, 75, 60, 90 you are correct!!!
         /*int[] intArr = {15, 30, 45, 60, 75};
         intArr[2] = intArr[4];
         intArr[4] = 90;
         System.out.println(Arrays.toString(intArr));*/
 
-        //Q54
+        //QA54
         // two way to write interation. one is use i : intArr, the other is i = 0 to intArr[i]
         /*int[] intArr = {8, 16, 32, 64, 128};
         for (int i : intArr) {
@@ -541,7 +542,7 @@ public class Test {
             System.out.print(intArr[i] + " ");
         }*/
 
-        //Q55
+        //QA55
         // Ans:
         // 1 can be implemented by using enhanced for loop
         // 3 can NOT be implemented by either the enhanced for loop or standard for loop
@@ -551,14 +552,14 @@ public class Test {
         //2. Process all the elements of the array in the reverse order of entry.
         //3. Process alternating elements of the array in the order of entry.
 
-        //Q56
+        //QA56
         // 400 200, this static is only for method, not for results, so var don't change, and results is 400 and var
         // is 200
         /*int var = 200;
         System.out.println(doCal(var));
         System.out.println(var);*/
 
-        //Q57
+        //QA57
         // Small type can NOT contain big type. Interface can be a type.
         //Given the following class declarations:
         //public abstract class Animal{}
@@ -569,11 +570,11 @@ public class Test {
         // ArrayList<Tiger> myList = new ArrayList<>();
         // myList.add(new Cat());
 
-        //Q58
+        //QA58
         //java bytecode: it can run on any platform as long as this platform has a java compiler, NO NEED JRE.
         // Then run on JVM or its implementation.
 
-        //Q59
+        //QA59
         //key! null is NOT an instance in java, so anyting Object obj1 = null, there is NO object created!!!
         /*Object obj1 = new Object();
         Object obj2 = null;
@@ -595,7 +596,7 @@ public class Test {
         System.out.println(obj1.num);
         System.out.println(obj2.num);*/
 
-        //Q61
+        //QA61
         // byte short integer is ok to use 1, String, Long, Double needs : "1", 1l, 1d and so on
         /*Byte x1 = 1;
         short x2 = 1;
@@ -613,7 +614,7 @@ public class Test {
                 break;
         }*/
 
-        //Q62
+        //QA62
         // A boolean can NOT be null but Boolean can be null!!!! small boolean no, big Boolean yes. and Boolean is
         // null mean the value is false;
         /*Boolean[] bool = new Boolean[2];
@@ -622,10 +623,10 @@ public class Test {
 
         System.out.println(bool[0] + " " + bool[1]);*/
 
-        //Q63
+        //QA63
         // B. B small is in big but big is not small
 
-        //Q64
+        //QA64
         // need to see all options,
         /*String str = "9001";
         int num = Integer.parseInt(str);
@@ -649,12 +650,12 @@ public class Test {
         App obj = new App();
         obj.doStuff("9009");*/
 
-        //Q65 : Efficient / flexible
+        //QA65 : Efficient / flexible
         //Which two are benefits of polymorphism?
         //B. More efficient code at runtime
         //D. More flexible and reusable code
 
-        //Q66
+        //QA66
         //overlap to the new ones
         /*int[] nums1 = new int[1];
         int[] nums2 = {1, 2, 3, 4, 5};
@@ -667,16 +668,16 @@ public class Test {
             System.out.print(i + " : ");
         }*/
 
-        //Q67
+        //QA67
         // == ONLY IF two variable refer to same object, then true. equals() as long as value same, true;
 
-        //Q68
+        //QA68
         //employee can't budget, manager can't option hahhah small can't go to big, big can go to small
 
-        //Q69
+        //QA69
         //Read carefully, psvm, string[] args
 
-        //Q70
+        //QA70
        /* int[][] n = {{1, 3}, {2, 4}};
         for (int i = n.length - 1; i >= 0; i--) {
             for (int j : n[i]) {
@@ -684,7 +685,7 @@ public class Test {
             }
         }*/
 
-        //Q71
+        //QA71
         //read the code: a , e and o, o
         /*class Vowel{
             private char var;
@@ -699,16 +700,16 @@ public class Test {
         System.out.println(var1 + " " + var2);
         System.out.println(obj1.var + " " + obj2.var);*/
 
-        //Q72
-        //Repeat Q1, 10 Hello World
+        //QA72
+        //Repeat QA1, 10 Hello World
 
-        //Q73
+        //QA73
         //Ans: 9   java space duke, totally 9 character
         /*String s = "JAVA DUKE";
         int len = s.trim().length();
         System.out.println(len);*/
 
-        //Q74
+        //QA74
         // command1 : javac Test.java
         // command2 : java Test TRUE null
         //Ans: true, false: null is false by default
@@ -716,11 +717,11 @@ public class Test {
         boolean b = new Boolean(args[1]);
         System.out.println(a + " " + b);*/
 
-        //Q75
+        //QA75
         // Ans: a: replace n1 with p1.A replace n2 with p1.A and p1.p2.B
         //need to import with specified class, better not use * or total package
 
-        //Q76
+        //QA76
         //Ans: sb.delete(int start, int end) sb.delete, sb.replace, sb.append. no remove no deleteAll...
         /*StringBuilder sb = new StringBuilder("abc");
         sb.toString();
@@ -728,7 +729,7 @@ public class Test {
         sb.delete(0, sb.length());
         System.out.println(sb + " : " + sb.length());*/
 
-        //Q77
+        //QA77
         // Tri express, good enough
         /*String stuff = "TV";
         String res = null;
@@ -743,7 +744,7 @@ public class Test {
 
         res = stuff.equals("TV") ? "Walter" : stuff.equals("Movie") ? "White" : "No result";*/
 
-        //Q78
+        //QA78
         // index is 0, so just print f, int f = ps.indexOf(p2);
         /*class Patient{
             String name;
@@ -761,7 +762,7 @@ public class Test {
             System.out.println("Mike found");
         }*/
 
-        //Q79
+        //QA79
         //Ans: D. expression should be single value. A, no need default, B, no need break, C, can NOT change a runtime
         //Which statement is true about the switch statement?
         //A. It must contain the default section.
@@ -769,7 +770,7 @@ public class Test {
         //C. Its case label literals can be changed at runtime.
         //D. Its expression must evaluate to a single value.
 
-        //Q80
+        //QA80
         // substring, left close, right open, endindex can be length, i.e, plus 1
         //Thomas substring(2,6) means 0 1 2 start with o to 0 1 2 3 4 5 end with s, even it is 6, means without 6, within 5
         //when come to peter, go to catch, so peter is null, joseph is null
@@ -788,7 +789,7 @@ public class Test {
             System.out.println(name);
         }*/
 
-        //Q81
+        //QA81
         // Ans: both Emp class and main class has compilation error:
         // 1. this must be the first line of the contructor
         // 2. if class has other constructor with parameter, then the default no parameter constructor will NO LONGER exist;
@@ -843,10 +844,10 @@ public class Test {
         e2.printDetails();
         e3.printDetails();*/
 
-        //Q82
-        //Duplicate with Q75, needs to import with specified class, no * better
+        //QA82
+        //Duplicate with QA75, needs to import with specified class, no * better
 
-        //Q83
+        //QA83
         //Ans: D. A ClassCastException is thrown only at line n1
         // can cast to another same level class?
         /*class A {
@@ -874,20 +875,20 @@ public class Test {
         b1.test();
         b3.test();*/
 
-        //Q84
+        //QA84
         //Ans: B. int 30, double 30.0.
-        //duplicate with Q45. Remember, int/double is default to choose unless other mentioned.
+        //duplicate with QA45. Remember, int/double is default to choose unless other mentioned.
 
-        //Q85
+        //QA85
         //Ans: C. A01, B12. Still no calcaulat, then just String
         /*System.out.println("RESULT A" + 0 + 1);
         System.out.println("RESULT B" + (1) + (2));*/
 
-        //Q86
+        //QA86
         //Ans: B 10 : 10
-        //Duplicate with Q33, static variable only count the last number, 10, 10
+        //Duplicate with QA33, static variable only count the last number, 10, 10
 
-        //Q87
+        //QA87
         //in arrayList, remove(int index), not object, but null is object, can be removed.
         // int is only index!!!!! if object, needs to specify which obj to be removed, like null.
         /*List<Integer> points = new ArrayList<>();
@@ -900,7 +901,7 @@ public class Test {
         points.remove(null);
         System.out.println(points);*/
 
-        //Q88
+        //QA88
         //Ans: [0, 0, 30, 40]
         //anytime use new keyword, a new piece of memory has be allocated for the instance, so that is actually to different thing.
         /*int[] nums;
@@ -916,19 +917,19 @@ public class Test {
             System.out.print(i + " : ");
         }*/
 
-        //Q89
+        //QA89
         //Ans: D. double y1 = 203.22, float flt = y1; is NOT acceptable as this is big to small, overflow;
         //float flt = 100;
         //Float fltA= 100;
         //float flt = (float) 1_11.0;
         //System.out.println(flt);
 
-        //Q90
+        //QA90
         // char defalut value is '' (nothing, but it is there), float default value is 0.0, boolean default value is false
         /*Test t = new Test();
         t.printAll();*/
 
-        //Q91
+        //QA91
         //Ans: D. do{idx++} while (idx < size - 1); first do ++ then compare
         //Be very careful to do while to see who did the last calculation and use which value;
         /*int[] stack = {10, 20, 30};
@@ -942,14 +943,14 @@ public class Test {
         } while (idx < size -1);
         System.out.println("The top element is : " + stack[idx]);*/
 
-        //Q92
+        //QA92
         //Ans: C. 5; count carefully, the space is also a character;
         /*String str = "Hello world";
         str.trim();
         int il = str.indexOf(" ");
         System.out.println(il);*/
 
-        //Q93
+        //QA93
         //Ans: B. false, true
         // suprise!!!!, s = s +str, otherwise it will be reverse way in for loop!! back way to do it!!!!
         /*String str1 = "Java";
@@ -962,7 +963,7 @@ public class Test {
         boolean b2 = (str1.equals(str3));
         System.out.println(b1 + " : " + b2);*/
 
-        //Q94
+        //QA94
         //Ans: B. Error is extendable, E. Error is a Throwable.
         //Which two statements are true?
         //A. Error class is unextendable.
@@ -971,7 +972,7 @@ public class Test {
         //D. Error is an Exception.
         //E. Error is a Throwable.
 
-        //Q95
+        //QA95
         //Ans: compliation failed. or 2 found, no way to make 3 found with this.
         /*int[] data = {2010, 2013, 2014, 2015, 2014};
         int key = 2014;
@@ -984,7 +985,7 @@ public class Test {
         }
         System.out.println(count + " Fount");*/
 
-        //Q96
+        //QA96
         //Ans: C. 2014-7-31
         //1. LocalDateTime(int year, int month, int dayofMonth, int hour, int min)
         //2. method plusXXX only change after, do NOT change original, create new object but original do NOT change!!!!!!!!
@@ -993,7 +994,7 @@ public class Test {
         dt.plusMonths(1);
         System.out.println(dt.format(DateTimeFormatter.ISO_DATE));*/
 
-        //Q97
+        //QA97
         // Ans: B. "JAVA EE". args.lengths is 0, so false, --> java EE;
         /*int x = args.length;
         if (checkLimit(x)) {
@@ -1004,13 +1005,13 @@ public class Test {
 
         System.out.println(x);*/
 
-        //Q98
+        //QA98
         // Ans : C. 13480.0 if everything correct, then just simple add it. underscore usage!!!! as normal!!! just easy to read, nothing else
         /*float var1 = (12_345.01 >= 12_345.00) ? 12_456 : 124_56.02f;
         float var2 = var1 + 1024;
         System.out.println(var2);*/
 
-        //Q99
+        //QA99
         //Ans: B. 300 : 100, 200 : 300. simple assign value, won't change anything!!!!!
         /*Test t1 = new Test();
         t1.var = 300;
@@ -1019,10 +1020,10 @@ public class Test {
         t2.stVar = 300;
         System.out.println(t2);*/
 
-        //Q101
+        //QA101
         //Ans: After line 11, one object is eligible for GC. s2 pointed to s3 and s2 = null, so s2 is the target.
 
-        //Q102
+        //QA102
         //Ans: 3, too diao, can only memory it.....
         /*int wd = 0;
         String days[] = {"sun", "mon", "wed", "sat"};
@@ -1040,20 +1041,20 @@ public class Test {
         }
         System.out.println(wd);*/
 
-        //Q103
+        //QA103
         // Ans: runtime exception, compilation no error
         /*LocalDate date = LocalDate.of(2012, 01, 32);
         date.plusDays(10);
         System.out.println(date);*/
 
-        //Q104
+        //QA104
         //Ans: B. 10, 22, 22
         /*int i = 10;
         int j = 20;
         int k = j += i / 5;
         System.out.println("i : " + i + " j : " + j + " k : " + k );*/
 
-        //Q105
+        //QA105
         //Ans: [green, red, yellow, cyan] no impact,...don't know why....
         /*List<String> colors = new ArrayList<>();
         colors.add("green");
@@ -1066,13 +1067,13 @@ public class Test {
         colors.add(3, "cyan");
         System.out.println(colors);*/
 
-        //Q106
+        //QA106
         //Ans: B. 3 5. only initiated, no calling method. so 3 5....
         /*int x = 3, y = 5;
         Test obj = new Test(x, y);
         System.out.println(x + " "+ y);*/
 
-        //Q107
+        //QA107
         //Ans: B 10 Hello Hello 11
         /*Test item = new Test();
         item.a1 = 11;
@@ -1083,7 +1084,7 @@ public class Test {
         doProudct(item.a1);
         System.out.println(i + " " + sb + " " + item.a1);*/
 
-        //Q108
+        //QA108
         //Ans: A compliation failed. lambda expression. no such use
         /*String[] arr = {"hi", "how", "are", "you"};
         List<String> arrList = new ArrayList<>(Arrays.asList(arr));
@@ -1091,7 +1092,7 @@ public class Test {
             System.out.println(s + " removed");
         }*/
 
-        //Q109
+        //QA109
         //Ans: final vairable must be initilized, final can NOT use with abstract, final means no extendable,
         //     abstract means needs to extend!!!!
         //       D.class A4{
@@ -1108,7 +1109,7 @@ public class Test {
             public A1() {}
         }*/
 
-        //Q110
+        //QA110
         //Ans: A NullPointerException is thrown at runtime;
         //code is ok, but class Studnet doesn't have default constructor, hence no students[0] is generated, cause
         // NullPointerException.
@@ -1129,10 +1130,10 @@ public class Test {
             System.out.println(" " + s.name);
         }*/
 
-        //Q111
+        //QA111
         //Ans: D. grid[2][0] = 'X' makes three consecutive X in grid. C? grid[0][2] not sure......
 
-        //Q112
+        //QA112
         //Ans: C. Welcome Log : 2 1. check ++x and x++, compare first x++, cal first ++x. finally all caled.
         /*int x = 1;
         int y = 0;
@@ -1143,7 +1144,7 @@ public class Test {
         }
         System.out.println("Log : " + x + " " + y );*/
 
-        //Q113
+        //QA113
         //Ans: A. java MyFile 1 3 2 2. needs "Arg is 2", so ar3 value should be 2, the 4th one equals 2.
         //Remeber!!! default pass in args is String!!!!!!!!!
         /*String ar1 = args[1];
@@ -1151,7 +1152,7 @@ public class Test {
         String ar3 = args[3];
         System.out.println("Arg is " + ar3);*/
 
-        //Q114
+        //QA114
         //Ans: B. 1 2 3. Carefully count. arr.length = 4, 4-1 = 3, i < 3 so i can only be 0 , 1, 2 which convert to
         // index is arr[0], arr[1], arr[2]. ans is 1 2 3
         /*int[] arr = {1, 2, 3, 4};
@@ -1161,22 +1162,252 @@ public class Test {
             i++;
         } while (i < arr.length - 1);*/
 
-        //Q115
+        //QA115
         //Ans: B. false, true. read the code....that's it.
         /*Test ts = new Test();
         System.out.print(isAvailable + " ");
         ts.isAvailable = doStuff();
         System.out.print(isAvailable);*/
+
+        //QB1
+        //Ans: A. 10 : 10;
+        // Duplicated with QA33, QA86. static needs to check the last number
+
+        //QB2
+        //Ans: B.D. Keywords: B. return statement must be corrected. D. setRadius method to be protected.
+        //A. Remove the area field.
+        //B. Change the getArea( ) method as follows:
+        //public double getArea ( ) { return Math.PI * radius * radius; }
+        //C. Add the following method:
+        //public double getArea ( ) { area = Math.PI * radius * radius; }
+        //D. Change the cases modifier of the SetRadius ( ) method to be protected.
+
+        //QB3
+        //Ans: B.Replacing line 5 with public static void main (String [] args) throws Exception {
+        // All exception throws out by needs some one to take care of ,so main method needs throws Exception
+        /*class Candidate {
+            private final Exception MissingInfoException = new Exception();
+            private final Exception AgeOutofBoundException = new Exception();
+            String name;
+            int age;
+            Candidate(String name, int age) throws Exception {
+                if (name == null) {
+                    throw MissingInfoException;
+                } else if (age <= 10 || age > 150) {
+                    throw AgeOutofBoundException;
+                } else {
+                    this.name = name;
+                    this.age = age;
+                }
+            }
+
+            @Override
+            public String toString() {
+                return "Candidate{" +
+                        "name='" + name + '\'' +
+                        ", age=" + age +
+                        '}';
+            }
+        }
+
+        Candidate c = new Candidate("James", 20);
+        Candidate c1 = new Candidate("William", 32);
+        System.out.println(c);
+        System.out.println(c1);*/
+
+        //QB4
+        //Ans: E. the loop execute infinite times; while loop never come out, that is the issue part.
+        /*int[] arr = {1, 2, 3};
+        for (int var : arr) {
+            int i = 1;
+            while(1 <= var);
+            System.out.println(i++);
+        }*/
+
+        //QB5
+        //Ans:  A: Replace line 8 with : public static void main(String[] args) throws Exception {
+        //      C: Replace line 2 with : public void printFileContent() throws Exception {
+        //AC, two throws!!!! needs someone to take care the throw out, so throws and throws. AC.
+
+        //QB6
+        //Ans: AD, change modifier from public to private. make a copy of content instead of a direct reference.
+        //Which two actions will improve the encapsulation of a class?
+        //A. Changing the access modifier of a field from public to private
+        //B. Removing the public modifier from a class declaration
+        //C. Changing the return type of a method to void
+        //D. Returning a copy of the contents of an array or ArrayList instead of a direct reference
+
+        //QB7
+        // Ans: BE. for abstract class, only use extends, interface use implements. if extends, needs to have method
+        // body for the inherited abstract class.
+        /*abstract class Shape {
+            private int x;
+            private int y;
+            public abstract void draw();
+            public void setAnchor(int x, int y) {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
+        abstract class Circle extends Shape {
+            private int radius;
+        }
+
+        class Circle1 extends Shape {
+            private int radius;
+            public void draw() {*//*code goes here*//*};
+        }*/
+
+        //QB8
+        //Ans: D. Compliation failed ONLY at line n3, ex.readCard(CardNo). read define early come late and read use
+        // parent. Needs to add exception to method signature.
+        /*Test ex = new Test();
+        int cardNo = 12344;
+        ex.checkCard(cardNo);
+        ex.readCard(cardNo);*/
+
+        //QB9
+        //Ans: D. Caught java.lang.RuntimeException: Exception
+        // check the order of the method to be called, if new RuntimeException is first, the go to catch and
+        // everything normal, if error first, then java.lang.Error, Error as Error is not Exception, they are same
+        // level inherted from Throwable.
+        /*Test t = new Test();
+        try {
+            t.doPrint();
+            t.doList();
+        } catch (Exception e) {
+            System.out.println("Caught " + e);
+        }*/
+
+        //QB10
+        //Ans:  A: Replacing <code1> with index > 0 and replacing <code2> with index--;
+        //      B. Replacing <code1> with index > 0 and replacing <code2> with --index;
+        // AB all ok, so in here there is no difference of --index and index--, just make sure index is > 0
+        /*boolean isChecked = false;
+        int[] array = {1, 3, 5, 7, 8, 9};
+        int index = array.length;
+        while (index > 0) {
+            if (array[index - 1] % 2 == 0) {
+                isChecked = true;
+            }
+            --index;
+        }
+        System.out.println(array[index] + " " +isChecked);*/
+
+        //QB11
+        //Ans: A: SecurityException C: IllegalArgumentException
+        // There is no DuplicatePathException!!!!
+
+        //QB12
+        // A method is declared to take three arguments. A program calls this method and passes
+        //only two arguments. What is the results?
+        //Ans: A. Compilation fails. there will be a red metioning needs more parameter
+        //int ans = doSum(5);
+
+        //QB13
+        //Ans: A
+        //Which statement best describes encapsulation?
+        //A. Encapsulation ensures that classes can be designed so that only certain fields and
+        //methods of an object are accessible from other objects.
+
+        //QB14
+        //Ans: A. sb.insert(0, "Hello ");
+        //StringBuilder has insert and append method, but append is simply append to the end and can either take 1
+        // parameter or 3 parameter, insert can take from beginning, insert(int index, String s)
+        /*StringBuilder sb = new StringBuilder();
+        sb.append("world");
+        sb.insert(0,"hello ");
+        System.out.println(sb);*/
+
+        //QB15
+        //The protected modifier on a Field declaration within a public class means that the field
+        //Ans: D. Can be read and written from this class and its subclass defined in any package.
+        //Though with protected modifier, it is still in public class, thus any package!!!! read the whole sentence!!!
+
+        //QB16
+        //Ans: E. compilation failed. internal while condition needs a true or false, not some definition
+        /*while(int i = 0; i < 2) {
+            i++;
+            System.out.println("i = " + i);
+        }*/
+
+        //QB17
+        //Ans: A. public abstract class Toy {
+        //          public abstract class calculate(Toy t);
+        //          public void printToy(Toy t) {}
+        //      }
+        // in abstract class, either declare with abstract, or must have method body, like {}. no final!!!! if use
+        // abstract, then no body!!!!
+        /*abstract class Toy{
+            public abstract int calcuat(Toy t);
+            public void printToy(Toy t) {};
+
+        }*/
+
+        //QB18
+        //Ans: E. compilation failed at line 8>             System.out.println(number); this line.
+        // 1. in try block the variable is local variable, can not use outside the block, must be printed insdie.
+        // the scope of the variable number is limited to that block, so trying to access it outside causes a compile
+        // time error.
+        // 2. Double.valueOf("120D) =====> IS 120.0, NOT 120d
+        /*try {
+            Double number = Double.valueOf("120D");
+        } catch (Exception e) {
+
+        }
+        System.out.println(number);*/
+
+        //QB19
+        //Ans: C: An exception is thrown at run time:
+        // if int[] xx = {}, then no exception, but no print.
+        /*int[] xx = null;
+        for (int i : xx) {
+            System.out.println(i);
+        }*/
+
+        //QB20
+        //Ans: C. Null 0.0.
+        //It is static variable, so at load time this will be initilized with default value
+        System.out.println(dValue);
+        System.out.println(ref);
     }
 
-    //Q115
+    //QB20
+    static double dValue;
+    static Test ref;
+
+    //QB12
+    /*static int doSum(int x, int y) {
+        return x + y;
+    }*/
+
+    //QB9
+    /*public void doList() throws Exception {
+        throw new Error("Error");
+    }
+    public void doPrint() throws Exception {
+        throw new RuntimeException("Exception");
+    }*/
+
+    //QB8
+    /*void readCard(int cardNo) throws Exception{
+        System.out.println("Reading Card");
+    }
+
+    void checkCard(int cardNo) throws RuntimeException{
+        System.out.println("Checking Card");
+    }*/
+
+
+    //QA115
     /*public static boolean doStuff() {
         return !isAvailable;
     }
 
     static boolean isAvailable = false;*/
 
-    //Q107
+    //QA107
     /*int a1;
 
     public static void doProudct(int a) {
@@ -1187,7 +1418,7 @@ public class Test {
         sb.append(" " + sb);
     }*/
 
-    //Q106
+    //QA106
     /*int x, y;
 
     public Test(int x, int y) {
@@ -1199,7 +1430,7 @@ public class Test {
         this.y = y * y;
     }*/
 
-    //Q100
+    //QA100
     //Ans: D. compilation failed, again, interface and normal class can NOT polymorphism, has to be casted!!!
     //note: if change to C2 s = obj1, I t = obj2, then C1C2
     /*C2 obj1 = new C1();
@@ -1228,21 +1459,21 @@ public class Test {
     }*/
 
 
-    //Q99
+    //QA99
     /*public static int stVar = 100;
     public int var = 200;
     public String toString(){
         return var + " : " + stVar;
     }*/
 
-    //Q97
+    //QA97
    /* public static final int MIN = 1;
 
     public static boolean checkLimit(int x) {
         return (x >= MIN) ? true : false;
     }*/
 
-    //Q90
+    //QA90
     /*char c;
     boolean b;
     float f;
@@ -1260,7 +1491,7 @@ public class Test {
     }*/
 
 
-    //Q45
+    //QA45
     /*public static void doSum(Integer x, Integer y) {
         System.out.println("Integer sum is " + (x + y));
     }
@@ -1274,7 +1505,7 @@ public class Test {
         System.out.println("float sum is " + (x + y));
     }*/
 }
-        //Q47
+        //QA47
         /*class MyString{
             String msg;
 
@@ -1283,7 +1514,7 @@ public class Test {
             }
 
         }*/
-        //Q15
+        //QA15
             /*void readCard(int cardNo) throws Exception{
                 System.out.println("Reading Cards");
             }
@@ -1291,12 +1522,12 @@ public class Test {
                 System.out.println("Checking Cards");
             }*/
 
-        //Q16
+        //QA16
             /*public static boolean isAvailable(int x) {
                 return x-- > 0 ? true : false;
             }*/
 
-        //Q39
+        //QA39
         /*class Base {
             public void test() {
                 System.out.println("Base ");
@@ -1317,7 +1548,7 @@ public class Test {
 
 
 
-//Q23
+//QA23
     /*class A {
         public void a() {
             System.out.println("A ");
@@ -1336,7 +1567,7 @@ public class Test {
     }*/
 
 
-//Q21
+//QA21
     /*class Emp {
     String name;
     boolean contract;
@@ -1350,11 +1581,12 @@ public class Test {
         return name + ":" + contract + ":" + salary;
     }*/
 
-// Q109
+// QA109
 //final variable must be initilizaed!!!!!
 /*class A4{
     protected static final int i;
     private void doStuff(){}
 }*/
+
 
 
