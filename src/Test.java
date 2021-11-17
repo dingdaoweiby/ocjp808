@@ -330,6 +330,7 @@ public class Test {
         System.out.println(str1 == str2);*/
 
         //Q33
+        // Ans: A. 10, 10
         // All make 10, as long as static varable, should be same, and finally is the last number;
 
         //Q34
@@ -673,16 +674,267 @@ public class Test {
         //Read carefully, psvm, string[] args
 
         //Q70
-        int[][] n = {{1, 3}, {2, 4}};
+       /* int[][] n = {{1, 3}, {2, 4}};
         for (int i = n.length - 1; i >= 0; i--) {
             for (int j : n[i]) {
                 System.out.print(j);
             }
+        }*/
+
+        //Q71
+        //read the code: a , e and o, o
+        /*class Vowel{
+            private char var;
+        }
+        char var1 = 'a';
+        char var2 = var1;
+        var2 = 'e';
+        Vowel obj1 = new Vowel();
+        Vowel obj2 = obj1;
+        obj1.var = 'i';
+        obj2.var = 'o';
+        System.out.println(var1 + " " + var2);
+        System.out.println(obj1.var + " " + obj2.var);*/
+
+        //Q72
+        //Repeat Q1, 10 Hello World
+
+        //Q73
+        //Ans: 9   java space duke, totally 9 character
+        /*String s = "JAVA DUKE";
+        int len = s.trim().length();
+        System.out.println(len);*/
+
+        //Q74
+        // command1 : javac Test.java
+        // command2 : java Test TRUE null
+        //Ans: true, false: null is false by default
+        /*boolean a = new Boolean(Boolean.valueOf(args[0]));
+        boolean b = new Boolean(args[1]);
+        System.out.println(a + " " + b);*/
+
+        //Q75
+        // Ans: a: replace n1 with p1.A replace n2 with p1.A and p1.p2.B
+        //need to import with specified class, better not use * or total package
+
+        //Q76
+        //Ans: sb.delete(int start, int end) sb.delete, sb.replace, sb.append. no remove no deleteAll...
+        /*StringBuilder sb = new StringBuilder("abc");
+        sb.toString();
+        System.out.println(sb + " : " + sb.length());
+        sb.delete(0, sb.length());
+        System.out.println(sb + " : " + sb.length());*/
+
+        //Q77
+        // Tri express, good enough
+        /*String stuff = "TV";
+        String res = null;
+
+        if (stuff.equals("TV")) {
+            res = "Walter";
+        } else if (stuff.equals("Movie")) {
+            res = "White";
+        } else {
+            res = "No result";
         }
 
+        res = stuff.equals("TV") ? "Walter" : stuff.equals("Movie") ? "White" : "No result";*/
 
+        //Q78
+        // index is 0, so just print f, int f = ps.indexOf(p2);
+        /*class Patient{
+            String name;
+
+            public Patient(String name) {
+                this.name = name;
+            }
+        }
+        List ps = new ArrayList();
+        Patient p2 = new Patient("Mike");
+        ps.add(p2);
+        int f = ps.indexOf(p2);
+        System.out.println(f);
+        if (f >= 0) {
+            System.out.println("Mike found");
+        }*/
+
+        //Q79
+        //Ans: D. expression should be single value. A, no need default, B, no need break, C, can NOT change a runtime
+        //Which statement is true about the switch statement?
+        //A. It must contain the default section.
+        //B. The break statement, at the end of each case block, is mandatory.
+        //C. Its case label literals can be changed at runtime.
+        //D. Its expression must evaluate to a single value.
+
+        //Q80
+        // substring, left close, right open, endindex can be length, i.e, plus 1
+        //Thomas substring(2,6) means 0 1 2 start with o to 0 1 2 3 4 5 end with s, even it is 6, means without 6, within 5
+        //when come to peter, go to catch, so peter is null, joseph is null
+        /*String[] names = {"Thomas", "Peter", "Joseph"};
+        String[] pwd = new String[3];
+        int index = 0;
+        try {
+            for (String name : names) {
+                pwd[index] = name.substring(2, 6);
+                index++;
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid name");
+        }
+        for (String name : pwd) {
+            System.out.println(name);
+        }*/
+
+        //Q81
+        // Ans: both Emp class and main class has compilation error:
+        // 1. this must be the first line of the contructor
+        // 2. if class has other constructor with parameter, then the default no parameter constructor will NO LONGER exist;
+        /*class Emp {
+            private String name;
+            private int age;
+            private int salary;
+
+            public String getName() {
+                return name;
+            }
+
+            public void setName(String name) {
+                this.name = name;
+            }
+
+            public int getAge() {
+                return age;
+            }
+
+            public void setAge(int age) {
+                this.age = age;
+            }
+
+            public int getSalary() {
+                return salary;
+            }
+
+            public void setSalary(int salary) {
+                this.salary = salary;
+            }
+
+            public Emp(String name, int age) {
+                setName(name);
+                setAge(age);
+                setSalary(2000);
+            }
+
+            public Emp(String name, int age, int salary) {
+                setSalary(salary);
+                //this(name, age);
+            }
+
+            public void printDetails() {
+                System.out.println(name + " , " + age + " , " + salary);
+            }
+        }
+        //Emp e1 = new Emp();
+        Emp e2 = new Emp("Jack", 50);
+        Emp e3 = new Emp("Chole", 40, 5000);
+        //e1.printDetails();
+        e2.printDetails();
+        e3.printDetails();*/
+
+        //Q82
+        //Duplicate with Q75, needs to import with specified class, no * better
+
+        //Q83
+        //Ans: D. A ClassCastException is thrown only at line n1
+        // can cast to another same level class?
+        /*class A {
+            public void test() {
+                System.out.println("A");
+            }
+        }
+
+        class B extends A{
+            public void test() {
+                System.out.println("B");
+            }
+        }
+
+        class C extends A{
+            public void test() {
+                System.out.println("C");
+            }
+        }
+
+        A b1 = new A();
+        A b2 = new C();
+        b1 = (A)b2;
+        A b3 = (B)b2;
+        b1.test();
+        b3.test();*/
+
+        //Q84
+        //Ans: B. int 30, double 30.0.
+        //duplicate with Q45. Remember, int/double is default to choose unless other mentioned.
+
+        //Q85
+        //Ans: C. A01, B12. Still no calcaulat, then just String
+        /*System.out.println("RESULT A" + 0 + 1);
+        System.out.println("RESULT B" + (1) + (2));*/
+
+        //Q86
+        //Ans: B 10 : 10
+        //Duplicate with Q33, static variable only count the last number, 10, 10
+
+        //Q87
+        //in arrayList, remove(int index), not object, but null is object, can be removed.
+        // int is only index!!!!! if object, needs to specify which obj to be removed, like null.
+        /*List<Integer> points = new ArrayList<>();
+        points.add(1);
+        points.add(2);
+        points.add(3);
+        points.add(4);
+        points.add(null);
+        points.remove(2);
+        points.remove(null);
+        System.out.println(points);*/
+
+        //Q88
+        //anytime use new keyword, a new piece of memory has be allocated for the instance, so that is actually to different thing.
+        /*int[] nums;
+        nums = new int[2];
+        nums[0] = 10;
+        nums[1] = 20;
+        System.out.println(nums);
+        nums = new int[4];
+        nums[2] = 30;
+        nums[3] = 40;
+        System.out.println(nums);
+        for (int i : nums) {
+            System.out.print(i + " : ");
+        }*/
+
+        //Q89
+        //Ans: D. double y1 = 203.22, float flt = y1; is NOT acceptable as this is big to small, overflow;
+        //float flt = 100;
+        //Float fltA= 100;
+        //float flt = (float) 1_11.0;
+        //System.out.println(flt);
+
+        //Q90
+        // char defalut value is '' (nothing, but it is there), float default value is 0.0, boolean default value is false
+        /*Test t = new Test();
+        t.printAll();*/
     }
 
+    //Q90
+    /*char c;
+    boolean b;
+    float f;
+
+    void printAll() {
+        System.out.println(" c default is " + c);
+        System.out.println(" b default is " + b);
+        System.out.println(" f default is " + f);
+    }*/
 
 
     /*static int doCal(int var) {
