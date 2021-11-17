@@ -1,6 +1,8 @@
 import javafx.scene.AmbientLight;
+import org.omg.CORBA.CODESET_INCOMPATIBLE;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -923,7 +925,191 @@ public class Test {
         // char defalut value is '' (nothing, but it is there), float default value is 0.0, boolean default value is false
         /*Test t = new Test();
         t.printAll();*/
+
+        //Q91
+        //Ans: D. do{idx++} while (idx < size - 1); first do ++ then compare
+        //Be very careful to do while to see who did the last calculation and use which value;
+        /*int[] stack = {10, 20, 30};
+        int size = 3;
+        int idx = 0;
+        while (idx < size) {
+            idx++;
+        }
+        do {
+            idx++;
+        } while (idx < size -1);
+        System.out.println("The top element is : " + stack[idx]);*/
+
+        //Q92
+        //Ans: C. 5; count carefully, the space is also a character;
+        /*String str = "Hello world";
+        str.trim();
+        int il = str.indexOf(" ");
+        System.out.println(il);*/
+
+        //Q93
+        //Ans: B. false, true
+        // suprise!!!!, s = s +str, otherwise it will be reverse way in for loop!! back way to do it!!!!
+        /*String str1 = "Java";
+        String[] str2 = {"J", "a", "v", "a"};
+        String str3 = "";
+        for (String s : str2) {
+            str3 = str3 + s;
+        }
+        boolean b1 = (str1 == str3);
+        boolean b2 = (str1.equals(str3));
+        System.out.println(b1 + " : " + b2);*/
+
+        //Q94
+        //Ans: B. Error is extendable, E. Error is a Throwable.
+        //Which two statements are true?
+        //A. Error class is unextendable.
+        //B. Error class is extendable.
+        //C. Error is a RuntimeException.
+        //D. Error is an Exception.
+        //E. Error is a Throwable.
+
+        //Q95
+        //Ans: compliation failed. or 2 found, no way to make 3 found with this.
+        /*int[] data = {2010, 2013, 2014, 2015, 2014};
+        int key = 2014;
+        int count = 0;
+        for (int e : data) {
+            if (e != key) {
+                continue:
+                count++;
+            }
+        }
+        System.out.println(count + " Fount");*/
+
+        //Q96
+        //Ans: C. 2014-7-31
+        //1. LocalDateTime(int year, int month, int dayofMonth, int hour, int min)
+        //2. method plusXXX only change after, do NOT change original, create new object but original do NOT change!!!!!!!!
+        /*LocalDateTime dt = LocalDateTime.of(2014, 7, 31, 1, 1);
+        dt.plusDays(30);
+        dt.plusMonths(1);
+        System.out.println(dt.format(DateTimeFormatter.ISO_DATE));*/
+
+        //Q97
+        // Ans: B. "JAVA EE". args.lengths is 0, so false, --> java EE;
+        /*int x = args.length;
+        if (checkLimit(x)) {
+            System.out.println("JAVA SE");
+        } else {
+            System.out.println("JAVA EE");
+        }
+
+        System.out.println(x);*/
+
+        //Q98
+        // Ans : C. 13480.0 if everything correct, then just simple add it. underscore usage!!!! as normal!!! just easy to read, nothing else
+        /*float var1 = (12_345.01 >= 12_345.00) ? 12_456 : 124_56.02f;
+        float var2 = var1 + 1024;
+        System.out.println(var2);*/
+
+        //Q99
+        //Ans: B. 300 : 100, 200 : 300. simple assign value, won't change anything!!!!!
+        /*Test t1 = new Test();
+        t1.var = 300;
+        System.out.println(t1);
+        Test t2 = new Test();
+        t2.stVar = 300;
+        System.out.println(t2);*/
+
+        //Q101
+        //Ans: After line 11, one object is eligible for GC. s2 pointed to s3 and s2 = null, so s2 is the target.
+
+        //Q102
+        //Ans: 3, too diao, can only memory it.....
+        /*int wd = 0;
+        String days[] = {"sun", "mon", "wed", "sat"};
+        for (String s : days) {
+            switch (s) {
+                case "sat":
+                case "sun":
+                    wd -= 1;
+                    break;
+                case "mon":
+                    wd++;
+                case "wed":
+                    wd += 2;
+            }
+        }
+        System.out.println(wd);*/
+
+        //Q103
+        // Ans: runtime exception, compilation no error
+        /*LocalDate date = LocalDate.of(2012, 01, 32);
+        date.plusDays(10);
+        System.out.println(date);*/
+
+        //Q104
+        //Ans: B. 10, 22, 22
+        /*int i = 10;
+        int j = 20;
+        int k = j += i / 5;
+        System.out.println("i : " + i + " j : " + j + " k : " + k );*/
+
+        //Q105
+        //Ans: [green, red, yellow, cyan] no impact,...don't know why....
+        /*List<String> colors = new ArrayList<>();
+        colors.add("green");
+        colors.add("red");
+        colors.add("blue");
+        colors.add("yellow");
+        colors.remove(2);
+        System.out.println(colors);
+        System.out.println(colors.size());
+        colors.add(3, "cyan");
+        System.out.println(colors);*/
+
+
+
     }
+
+    //Q100
+    //Ans: D. compilation failed, again, interface and normal class can NOT polymorphism, has to be casted!!!
+    //note: if change to C2 s = obj1, I t = obj2, then C1C2
+    /*C2 obj1 = new C1();
+    I obj2 = new C1();
+    C2 s =  obj2;
+    I t = obj1;
+
+    //t.displayI();
+    //s.displayC2();
+
+
+    class C2 {
+        public void displayC2() {
+            System.out.println("C2");
+        }
+    }
+    interface I {
+        public void displayI();
+    }
+
+    class C1 extends C2 implements I{
+        @Override
+        public void displayI() {
+            System.out.println("C1");
+        }
+    }*/
+
+
+    //Q99
+    /*public static int stVar = 100;
+    public int var = 200;
+    public String toString(){
+        return var + " : " + stVar;
+    }*/
+
+    //Q97
+   /* public static final int MIN = 1;
+
+    public static boolean checkLimit(int x) {
+        return (x >= MIN) ? true : false;
+    }*/
 
     //Q90
     /*char c;
