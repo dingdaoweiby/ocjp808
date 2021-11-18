@@ -23,7 +23,7 @@ public class Test {
         System.out.println(date);*/
 
         //QA3
-        //Compilation fails at line n2(String s4 = (String) (s3 * s2);)
+        //Ans: C. Compilation fails at line n2(String s4 = (String) (s3 * s2);)
         //can not cast long to string, use String.valueOf(s4)
         /*Short s1 =200;
         Integer s2 = 400;
@@ -91,7 +91,7 @@ public class Test {
         }*/
 
         //QA8
-        //A B C C
+        //Ans. C. A B C C. ta.replace don't change ta, unless ta = ta.replace('C', 'D')
         /*String ta = "A ";
         ta = ta.concat("B ");
         String tb = "C ";
@@ -299,7 +299,7 @@ public class Test {
         // java Greeting Duke
 
         //QA30
-        // Ans: 0 2 4, just read the code!!!!
+        // Ans: C. 0 2 4, just read the code!!!! jj - 1 = 6, so ii < 6, ii max is 5---- > 0 2 4
         /*int ii = 0;
         int jj = 7;
         for (ii = 0; ii < jj - 1; ii = ii + 2) {
@@ -351,13 +351,13 @@ public class Test {
         }*/
 
         //QA36
-        //Ans: BCF???? E, ALL class not all "other" class!!!!
+        //Ans: BCE
         //Which three statements describe the object-oriented features of the Java language?
         //A. Objects cannot be reused.
         //B. A subclass can inherit from a superclass.
         //C. Objects can share behaviors with other objects.
         //D. A package must contain more than one class.
-        //E. Object is the root class of all other objects.
+        //E. Object is the root class of all other objects.     THIS IS CORRECT!!! IT IS ALL OTHER OBJECT ROOT CLASS!!!!
         //F. A main method must be declared in every class.
 
         //QA37
@@ -535,7 +535,7 @@ public class Test {
         //QA55
         // Ans:
         // 1 can be implemented by using enhanced for loop
-        // 3 can NOT be implemented by either the enhanced for loop or standard for loop
+        // 1, 2, 3 can be implemented by using standard for loop
         //int[] array = {1, 2, 3, 4, 5};
         //And given the requirements:
         //1. Process all the elements of the array in the order of entry.
@@ -561,8 +561,15 @@ public class Test {
         // myList.add(new Cat());
 
         //QA58
-        //java bytecode: it can run on any platform as long as this platform has a java compiler, NO NEED JRE.
-        // Then run on JVM or its implementation.
+        //Ans: C. it can run on any platform that has a java runtime environment.(JRE!!!!!)
+        //Which statement is true about java byte code:
+        //A. It can run on any platform.
+        //B. It can run on any platform only if it was compiled for that platform.
+        //C. It can run on any platform that has the Java Runtime Environment.
+        //D. It can run on any platform that has a Java compiler.
+        //E. It can run on any platform only if that platform has both the Java Runtime Environment and a Java compiler.
+
+
 
         //QA59
         //key! null is NOT an instance in java, so anyting Object obj1 = null, there is NO object created!!!
@@ -587,6 +594,7 @@ public class Test {
         System.out.println(obj2.num);*/
 
         //QA61
+        // Ans: ABF
         // byte short integer is ok to use 1, String, Long, Double needs : "1", 1l, 1d and so on
         /*Byte x1 = 1;
         short x2 = 1;
@@ -640,10 +648,16 @@ public class Test {
         App obj = new App();
         obj.doStuff("9009");*/
 
-        //QA65 : Efficient / flexible
+        //QA65
+        //Ans: C. More dynamic code at runtime
+        //     D. More flexible and reusable code
+        // Keywords: dynamic/ flexible
         //Which two are benefits of polymorphism?
-        //B. More efficient code at runtime
-        //D. More flexible and reusable code
+        // A. Fast code at runtime
+        // B. More efficient code at runtime
+        // C. More dynamic code at runtime
+        // D. More flexible and reusable code
+        // E. Code that is protected from extension by other classes
 
         //QA66
         //overlap to the new ones
@@ -1448,9 +1462,7 @@ public class Test {
 
         //QB27
         //Ans: AC
-        //A. public void addKwh(double kwh){this.kwh+=kwh; this.bill = this.bill * this.rate;}
-        //C. private void addKwh(doubel kwh){if(kwh > 0){this.kwh+=kwh; this.bill = this.bill * this.rate}}
-        //private needs compare, public no compare, that's it. simple as it is.
+        //B. public void addKwh(double kwh){if(kwh > 0){this.kwh+=kwh; this.bill = this.bill * this.rate;}}
 
         //QB28
         //Duplicate with QB23
@@ -1733,7 +1745,40 @@ public class Test {
         /*while (x > 0) {
             System.out.println(array[--x]);
         }*/
+
+        //Q??
+        //It contains compilation failure, but in line "throw Math.random...."
+        /*try {
+            method1();
+        } catch (MyException e) {
+            System.out.println("A");
+        }*/
+
+        //Q?
+        //
+        int row = 10;
+        for (; row > 0; ) {
+            int col = row;
+            while (col >= 0) {
+                System.out.println(col + " ");
+                col -= 2;
+            }
+            row = row / col;
+        }
+        int i = -2;
+        int j = 10;
+        System.out.println( j / i );
+
     }
+
+    //Q??
+    /*public static void method1() {
+        try {
+            throw Math.random() > 0.5 ? new MyException() : new RuntimeException();
+        } catch (RuntimeException re) {
+            System.out.println(" B");
+        }
+    }*/
 
     //QB41
     /*int count;
