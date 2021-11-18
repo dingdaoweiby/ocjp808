@@ -1,19 +1,9 @@
-import javafx.scene.AmbientLight;
-import org.omg.CORBA.CODESET_INCOMPATIBLE;
-
-import java.sql.SQLOutput;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-import java.util.function.Predicate;
+import java.io.IOError;
+import java.io.IOException;
 
 public class Test {
 
-    private static Object Person;
+    //private static Object Person;
 
     public static void main(String[] args) {
         //QA1
@@ -1226,7 +1216,7 @@ public class Test {
 
         //QB5
         //Ans:  A: Replace line 8 with : public static void main(String[] args) throws Exception {
-        //      C: Replace line 2 with : public void printFileContent() throws Exception {
+        //      C: Replace line 2 with : public void printFileContent() throws IOException {
         //AC, two throws!!!! needs someone to take care the throw out, so throws and throws. AC.
 
         //QB6
@@ -1369,13 +1359,408 @@ public class Test {
         //QB20
         //Ans: C. Null 0.0.
         //It is static variable, so at load time this will be initilized with default value
-        System.out.println(dValue);
-        System.out.println(ref);
+        /*System.out.println(dValue);
+        System.out.println(ref);*/
+
+        //QB21
+        //Ans: C. compilation fail.
+        // remove break, go through all loop and finally reach to "red"; remove continue, when count to 4, simple print out colors[4] maroon
+        /*String[] colors = {"red", "blue", "green", "yellow", "maroon", "cyan"};
+        int count = 0;
+        for (String c : colors) {
+            if (count >= 4) {
+                break;
+            } else {
+                continue;
+            }
+            if (c.length() >= 4) {
+                colors[count] = c.substring(0, 3);
+            }
+            count++;
+        }
+        System.out.println(colors[count]);*/
+
+        //QB22
+        //Ans: B. abstract class Z extends X implements Y {
+        //          public void methodZ(){};
+        //       }
+        //     D. abstract class Z extends X implements Y{ }
+        // 1. extends abstract class, implements interface
+        // 2. if extends from abstract class, either write all method body, or make it abstract, so that interface is also no need to impletments
+        // 3. in abstract class, either make method abstract, or add method body {},  but must write it all
+        /*abstract class X {
+            public abstract void methodX();
+        }
+        abstract class Z extends X implements Runnable {
+            public void methodZ(){
+                System.out.println("do something");
+            };
+        }*/
+
+        //QB23
+        //Ans: C. Replace the code fragment at line n3 with
+        //          abstract class Ebook extends Book
+        //     D. At line n4 insert
+        //          public void setBookMakr(){}
+        // 1. extends from super class, then the interface from superclass also come in, so implementation is a must, insert is good.
+        // 2. sub class as abstract, with body or without method, all ok
+        // 3. in abstract class, if no abstract in method, then body is still needed!!!!!!!!!!
+        /*abstract class Book implements Readable {
+            public void readBook() {
+
+            }
+        }
+
+         class Ebook1 extends Book{
+            public void readBook(){}
+             public void setBookMark(){}
+        }
+
+        abstract class Ebook2 extends Book{
+            public void readBook() {
+
+            }
+        }*/
+
+        //QB24
+        //javac Palidrome.java
+        //java palidrome wow mom
+        //Ans: B. The code compile, but does not execute.
+        /*System.out.println(args[1]);
+        return 0;*/
+
+        //QB25
+        // Ans: C. 400.0 100.0
+        // prd.price needs to change as the object has been instantiation. but newPrice is still there, so there is no change, 400 100;
+        /*Product prd = new Product();
+        prd.price = 200;
+        double newPrice = 100;
+
+        Test t = new Test();
+        t.updatePrice(prd, newPrice);
+        System.out.println(prd.price + " " + newPrice);*/
+
+        //QB26
+        //Duplicate with QB5
+        //Ans: A. Replace line 8 with public static void main(String[] args) throws Exception {
+        //     C. Replace line 2 with public void printFileContent() throws IOException{
+        // AC, adds two throws, needs to take care by someone.
+
+        //QB27
+        //Ans: AC
+        //A. public void addKwh(double kwh){this.kwh+=kwh; this.bill = this.bill * this.rate;}
+        //C. private void addKwh(doubel kwh){if(kwh > 0){this.kwh+=kwh; this.bill = this.bill * this.rate}}
+        //private needs compare, public no compare, that's it. simple as it is.
+
+        //QB28
+        //Duplicate with QB23
+        //Ans: C. Replace the code fragment at line 3 with
+        //          abstract class Ebook extends Book {
+        //     D. At line 4 insert :
+        //          public void setBookMark() {}
+
+        //QB29
+        //Ans: B. return x + creditCard.substring(15, 19)
+        //     C. Stringbuilder sb = new StirngBuilder(x);
+        //        sb.append(creditCard, 15, 19);
+        //        return sb.toString();
+        // 1. simple return x + substring something, 2. append can take 3 parameter, string s, int start, int end
+
+
+        //QB30
+        //Ans: C. A runtime Error is thrown in the thread "main"
+        // 1. yes, it is a infiinte loop cause outofmemeory Error; 2. runtime is just an adj, Error is the correct one. 3. String[] is nothing
+        /*ArrayList myList = new ArrayList();
+        String[] myArray;
+        try {
+            while (true) {
+                myList.add("My String");
+            }
+        } catch (RuntimeException e1) {
+            System.out.println("Caught a RuntimeException " + e1);
+        } catch (Exception e2) {
+            System.out.println("Caught an Exception " + e2 );
+        }
+        System.out.println("Ready to use");*/
+
+        //QB31
+        //Ans: D. Compilation failed at line n2 (this(20)),
+        // 1. this(), super() needs to be the first line of constructor, can NOT be together!!!
+        // 2. However, super(), this.y = y can be in the sample constrctor, still super() needs to be at the first line.
+        /*class Vechicle {
+            int x;
+            Vechicle(){
+                this(10);
+            }
+
+            Vechicle(int x) {
+                this.x = x;
+            }
+        }
+
+        class Car extends Vechicle {
+            int y;
+            Car() {
+                super();
+                //this(20);
+            }
+
+            Car(int y) {
+                this.y = y;
+            }
+
+            public String toString() {
+                return super.x + " " + this.y;
+            }
+        }
+        Vechicle y = new Car();
+        System.out.println(y);*/
+
+        //QB32
+        //Ans: A: public abstract class Toy {
+        //              public abstract int calculat(Toy t);
+        //              public void printDetails(Toy t) {/*code goes here*/}
+        //        }
+        //Duplicate with QB17.
+        // 1. either abstract method, no method body; or non abstract method with method body
+        // 2. in abstrct class there can be method with body.
+
+        //QB33
+        //Ans: A. Only A.java compiles successfully.
+        // 1. in class B. can NOT declare variable with access modifier within a method. this is for class, method, attributes.
+        //    the scope of method is only within the method, so no need to add access modifier within a method body.
+        /*class A {
+            public void a(){}
+            int a;
+        }
+
+        class B {
+            private int doStuff() {
+                private int x = 100;
+                return x++;
+            }
+        }
+
+        class C {
+            public void main(String fileName) throws IOException{}
+        }*/
+
+        //QB34
+        //Ans: D. compilation failed, see class TestCaller
+
+        //QB35
+        //Ans: E. Compilation fails both at line n1 and n2. (ans = 0) (System.out.println("Answer = " + ans);*/)
+        // Again, check that if out of try{} catch{} block, the variable's scope is only in the block, so ans can not be resolved.
+        /*try {
+            int num = 10;
+            int div = 0;
+            int ans = num / div;
+        } catch (ArithmeticException ae) {
+            ans = 0;
+        } catch (Exception e) {
+            System.out.println("Invalid calculation");
+        }
+        System.out.println("Answer = " + ans);*/
+
+        //QB36
+        //Ans: D. 100 200 100 0
+        // y = this.y ....this only works for confusing people...but int defalut is 0, remember.
+        /*class Field {
+            int x;
+            int y;
+
+            public void doStuff(int x, int y) {
+                this.x = x;
+                y = this.y;
+            }
+
+            public void display(){
+                System.out.print(x + " " + y + " ");
+            }
+        }
+
+        Field m1 = new Field();
+        m1.x = 100;
+        m1.y = 200;
+        Field m2 = new Field();
+        m2.doStuff(m1.x, m1.y);
+        m1.display();
+        m2.display();*/
+
+        //QB37
+        //Ans: A. Replace line n1 with :
+        //        super();
+        //        this.bounds = bounds;
+        //     E. Replace line n2 with;
+        //        super(type, maxSpeed);
+        //        this.bounds = bounds;
+        /*class Animal {
+            String type = "Canine";
+            int maxSpeed = 60;
+            Animal (){};
+
+            Animal(String type, int maxSpeed) {
+                this.type = type;
+                this.maxSpeed = maxSpeed;
+            }
+        }
+
+        class WildAnimal extends Animal{
+            String bounds;
+
+            WildAnimal(String bounds) {
+                super();
+                this.bounds = bounds;
+            }
+
+            WildAnimal(String type, int maxSpeed, String bounds){
+                super(type, maxSpeed);
+                this.bounds = bounds;
+            }
+        }
+        WildAnimal wolf = new WildAnimal("Long");
+        WildAnimal tiger = new WildAnimal("Feline", 80, "Short");
+        System.out.println(wolf.type + " " + wolf.maxSpeed + " " + wolf.bounds);
+        System.out.println(tiger.type + " " + tiger.maxSpeed + " " + tiger.bounds);*/
+
+        //QB38
+        //Duplicated with QB5 and QB26,
+        //Ans: A Replace line 2 with public void printFileContent() throws IOExpection {
+        //     C Replace line 8 with public static void main(String[] args) throws Exception{
+
+        //QB39
+        //Ans. D. static int findMax(int[] num)
+        // 1. directly call method, use static, 2. notice the parameter is array, not single number
+        /*int[] num = {12, 13, 42, 32, 15, 156, 23};
+        int max = findMax(num);
+        System.out.println(max);*/
+
+        //QB40
+        //Ans: CDF
+        // C. A method can have the same name as the field
+        // D. A class can have overloaded static method
+        // F. The fields needs not to be initialized before use
+
+        //QB41
+        //Ans: B. Compilation failed at line n1 and n2
+        //Non-static field 'count' cannot be referenced from a static context. Non to static== ok, static to non NO!!
+        //Test.displayMsg();
+        //Test.displayMsg();
+
+        //QB42
+        //Ans: A. Compilation failed at both line n1 and line n2
+        // See class Person
+
+        //QB43
+        //Which three statements are true about exception handling?
+        //Ans: B. All subclasses of RuntimeException class are recoverable.
+        //     C. The parameter in a catch block is of Throwable type.
+        //     E. All subclasses of the Exception class except RuntimeException class are checked exceptions.
+        //Keywords: B. subclasses of runtimeException recoverable
+        //          C. parameter in catch Throwable
+        //          E. Exception except RuntimeException is checked Exceptions
+        // A. Only unchecked exceptions can be rethrown.
+        // B. All subclasses of the RuntimeException class are recoverable.
+        // C. The parameter in a catch block is of Throwable type.
+        // D. All subclasses of the RuntimeException class must be caught or declared to be thrown.
+        // E. All subclasses of the Exception class except the RuntimeException class are checked exceptions.
+        // F. All subclasses of the Error class are checked exceptions and are recoverable.
+
+        //QB44
+        //Ans: D. At line 4 insert public void setBookMark(){}
+        // if A, then an abstract class can't be instiatated, so no way to be A
+        // ?? NOT sure, but as per test, should be D.
+        /*abstract class Book implements Readable {
+            public void readBook(){}
+        }
+
+        class Ebook extends Book {
+            public void readBook(){}
+            public void setBookMark(){}
+
+        }
+
+        Book b1 = new Ebook();
+        b1.readBook();*/
+
+        //QB45
+        //Ans: CDE. either directly assignment the value, or use constructor.
+        // Remember, can NOT make default constructor disappear, otherwise the instatiate of object may fail.
+        /*CheckingAccount acct = new CheckingAccount();
+        //acct.amount = 100;
+        System.out.println(acct.amount);*/
+
+        //QB46
+        //Ans: E. Compilation fails at both line n1 and line n2.
+
+        //QB47
+        //Ans: A. at line1 import clothes.Shirt,
+        //        at line2 String color = getColor();
+
+        //QB48
+        //Ans: B. Read book????
+
+        //QB49
+        //Ans: A. Call the setArea method at the end of setHeight method.
+        //     E. change the setArea to private.
+        // 1. go through the method and make it the end of last set method.
+        // 2. setArea method needs to be private to make more encapsulation.
+
+        //QB50
+        //Ans: C. public void printToy() {}
+        //     D. public int calculatePrice() {return price}
+        //     E. public abstract int computeDiscount()
+        //1. in abstract class, method either use abstract without method body, or no abstract with body.
+        //2. there can't be any static keyword in abstract class as the static refer to object while abstract class can NOT instaticated.
+
+        //QB51
+        //Ans: AE, read carefully and do NOT always trust the docs.
+        /*int[] array = {10, 20, 30};
+        int x = array.length;*/
+        //Option A. correct
+        /*while (x > 0) {
+            x--;
+            System.out.println(array[x]);
+        }*/
+
+        //Option B. incorrect
+        /*do {
+            x--;
+            System.out.println(array[x]);
+        } while (x >= 0);*/
+
+        //Option E. correct
+        /*while (x > 0) {
+            System.out.println(array[--x]);
+        }*/
     }
 
+    //QB41
+    /*int count;
+    public static void displayMsg() {
+        count++;
+        System.out.println("Welcom " + " Visit count : " + count);
+    }*/
+    //QB39
+    /*static int findMax(int[] num) {
+        int max = 0;
+        for (int i : num) {
+            if (i > max) {
+                max = i;
+            }
+        }
+        return max;
+    }*/
+
+    //QB25
+    /*public void updatePrice(Product prd,double price) {
+        price = price * 2;
+        prd.price = prd.price + price;
+    }*/
+
     //QB20
-    static double dValue;
-    static Test ref;
+    //static double dValue;
+    //static Test ref;
 
     //QB12
     /*static int doSum(int x, int y) {
@@ -1586,6 +1971,11 @@ public class Test {
 /*class A4{
     protected static final int i;
     private void doStuff(){}
+}*/
+
+//QB25
+/*class Product {
+    double price;
 }*/
 
 
